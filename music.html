@@ -4,19 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>推薦音樂 - YAKAAX</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Helvetica',sans-serif;background:#f0f0f0;color:#333;scroll-behavior:smooth;}
-header{position:fixed;top:0;width:100%;background:rgba(240,240,240,0.95);display:flex;justify-content:flex-end;padding:1rem 2rem;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-header a{margin-left:2rem;text-decoration:none;color:#333;font-weight:bold;transition:color 0.3s;}
-header a:hover{color:#6677aa;}
-section{min-height:100vh;padding:6rem 2rem 4rem 2rem;opacity:0;transform:translateY(40px);transition:all 1s ease;position:relative;margin-bottom:2rem;}
-section.visible{opacity:1;transform:translateY(0);}
-.bg-block{position:absolute;border-radius:15px;opacity:0.15;z-index:0;}
-.bg-blue{background-color:#6677aa;}
-.bg-orange{background-color:#cc9966;}
-h1,h2{margin:0 0 1rem 0;}
-p{line-height:1.6;}
+body {
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #f0f0f0;
+  color: #333;
+  scroll-behavior: smooth;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(240,240,240,0.95);
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header a:hover { color: #6677aa; }
 
+section {
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+section.visible { opacity: 1; transform: translateY(0); }
+
+.bg-block {
+  position: absolute;
+  border-radius: 15px;
+  opacity: 0.15;
+  z-index: 0;
+}
+.bg-blue { background-color: #6677aa; }
+.bg-orange { background-color: #cc9966; }
+
+h1,h2 { margin: 0 0 1rem 0; }
+
+.music-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+.music-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.music-item img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.music-item:hover {
+  transform: scale(1.05);
+}
+.music-item p {
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  transition: text-shadow 0.3s ease;
+}
+.music-item:hover p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* 手機優化文字大小 */
+@media (max-width: 600px) {
+  header a { margin-left: 1rem; font-size: 0.9rem; }
+  p { font-size: 0.9rem; }
+  section { padding: 6rem 1rem 4rem 1rem; }
+}
 </style>
 </head>
 <body>
@@ -29,170 +103,139 @@ p{line-height:1.6;}
   <a href="contact.html">聯絡資訊</a>
 </header>
 
-
 <section>
-<section style="text-align:center;">
-
- <div style="width:100%; height:50px; background:#a3b9f5; display:flex; justify-content:center; align-items:center;"></div>
- 
- <div style="text-align:center"> </div>
+  <div style="width:100%; height:50px; background:#a3b9f5; margin-bottom:2rem;"></div>
   <div class="bg-block bg-blue" style="top:20%; left:15%; width:200px; height:150px;"></div>
   <h2>音樂庫</h2>
- <section>
-    
 
-  <!-- 置中圖片文字區塊 -->
-<a href="https://youtu.be/YWc88Y6K0Mo?si=m_RgCyp5i_yjwkpu" target="_blank">
-  <img src="a.png" alt="Instagram" width="250">
-</a>
-  <p>Gummy B - LIGHTS IN YOUR EYES </p>
-  
+  <div class="music-container">
+    <!-- 每首歌一個 music-item -->
+    <div class="music-item">
+      <a href="https://youtu.be/YWc88Y6K0Mo?si=m_RgCyp5i_yjwkpu" target="_blank"><img src="a.png" alt=""></a>
+      <p>Gummy B - LIGHTS IN YOUR EYES</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/bBOAX5CE7VA?si=c6qf9J1rtQrclzIk" target="_blank"><img src="b .png" alt=""></a>
+      <p>wannasleep - 前往百合花田時繞了點路</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/aprgP-WSwWc?si=Eitp_qBOKHXt0miz" target="_blank"><img src="c.png" alt=""></a>
+      <p>趙翊帆(ZHAOYIFAN) - 紫花海 Violette</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/-bKdXOm2Pbs?si=sARbzrMYOgsL_ALU" target="_blank"><img src="d.png" alt=""></a>
+      <p>烏鴉地板Corvus On the Ground - 我不知道你知不知道欸</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/7DMttkz5_ZA?si=WJUBORViF83NjCFt" target="_blank"><img src="e.png" alt=""></a>
+      <p>美秀集團 Amazing Show－紙花 Burning Lettersfeat.張芳瑜</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/vwjYDJC95lk?si=JfOSi2_6rwR_xCN0" target="_blank"><img src="f .png" alt=""></a>
+      <p>Losty - 謊言+秘密=幸福</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/wmxCotXmn7M?si=ldRBLzFyy9Gw1GIi" target="_blank"><img src="h.png" alt=""></a>
+      <p>someshiit 山姆 - 善良是 Kinds of Kindness (ft. CHS)</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/2rrrvNGEntY?si=xl6VXZU5H3vJ3rFy" target="_blank"><img src="g.png" alt=""></a>
+      <p>Crispy脆樂團 [ 年少的我們永遠輕狂 Youth ]</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/nNAjOaFqH_s?si=gj3GsKIZwXolm_T7" target="_blank"><img src="i.png" alt=""></a>
+      <p>Flesh Juicer 血肉果汁機 - 愛情99</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/tM1zfYHokzc?si=cUJGsAdl_mXM7XzP" target="_blank"><img src="j.png" alt=""></a>
+      <p>莉莉周她說 Lily Chou-Chou Lied - 大預言家</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/s9XbEKJ5_hA?si=Jp8BS2J-zObnaCyt" target="_blank"><img src="k.png" alt=""></a>
+      <p>我是機車少女-認識我</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/ACUwOqwvP2Q?si=Bx0oq3-bxsdDa1cj" target="_blank"><img src="l.png" alt=""></a>
+      <p>deca joins | 我不用問</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/Z9IrTxDX458?si=j1zR1PjHFcbbm-So" target="_blank"><img src="m.png" alt=""></a>
+      <p>上山 《 得到平靜 Inner Peace 》</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/jK8I8eusEhI?si=ySfp3DAShBK6NZW8" target="_blank"><img src="n.png" alt=""></a>
+      <p>Norton Street 諾頓街 - Taipei Flight</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/mFAhj2aMLQs?si=onhMKZlqE4_Ox1Ma" target="_blank"><img src="o.png" alt=""></a>
+      <p>VH (Vast & Hazy)【整理整頓清潔中 Apple】</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/0KMqq10rTrM?si=6g0hBEp60NhUSp8L" target="_blank"><img src="p.png" alt=""></a>
+      <p>小陸 - 寫完這首歌我就會放下你了</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/ciuxRdUTenU?si=c0Fp4IbE4uejjhEY" target="_blank"><img src="q.png" alt=""></a>
+      <p>陳嫺靜 - 吸塵器 維他命</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/HHSguIIeNTM?si=--W663_VThILGbAS" target="_blank"><img src="r.png" alt=""></a>
+      <p>【NEWSHIT】NO.2 政大黑音-最美好的時光</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/ACyivCAsIGM?si=vDB5hxFMAmXi9CnS" target="_blank"><img src="s.png" alt=""></a>
+      <p>林潔心 - 空白題 Test of my life</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/29sbWCkw2HA?si=j3SdTeGUcaAb0f27" target="_blank"><img src="t.png" alt=""></a>
+      <p>渣泥ZANI 〈那個更衣間 / The Dressing Room</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/YRizyF42zUQ?si=_koeFMzOvD5nLt8O" target="_blank"><img src="u.png" alt=""></a>
+      <p>Hello Nico - 荒蕪</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/1FyJY931Nqc?si=4dgPbRpLe87hEjej" target="_blank"><img src="y.png" alt=""></a>
+      <p>163braces - 找</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/av4QYOV0aYI?si=CY1i6d2egfdSoGdQ" target="_blank"><img src="x.png" alt=""></a>
+      <p>胡恂舞 - 我無法再陪著你流浪</p>
+    </div>
+
+    <div class="music-item">
+      <a href="https://youtu.be/2fQ5es-qLaY?si=Uf0-tYdib9uo8VhC" target="_blank"><img src="z.png" alt=""></a>
+      <p>草東沒有派對 - 爛泥</p>
+    </div>
 
   </div>
-<a href="https://youtu.be/bBOAX5CE7VA?si=c6qf9J1rtQrclzIk" target="_blank">
-  <img src="b .png" alt="Instagram" width="250">
-</a>
-  <p>wannasleep - 前往百合花田時繞了點路</p>
 
-<div>
-<a href="https://youtu.be/aprgP-WSwWc?si=Eitp_qBOKHXt0miz" target="_blank">
-  <img src="c.png" alt="Instagram" width="250">
-</a>
-  <p>趙翊帆(ZHAOYIFAN) - 紫花海 Violette</p>
- 
-<div>
-<a href="https://youtu.be/-bKdXOm2Pbs?si=sARbzrMYOgsL_ALU" target="_blank">
-  <img src="d.png" alt="Instagram" width="250">
-</a>
-  <p>烏鴉地板Corvus On the Ground - 我不知道你知不知道欸</p>
-
-<div>
-<a href="https://youtu.be/7DMttkz5_ZA?si=WJUBORViF83NjCFt" target="_blank">
-  <img src="e.png" alt="Instagram" width="250">
-</a>
-  <p>美秀集團 Amazing Show－紙花 Burning Lettersfeat.張芳瑜</p>
-
-<div>
-<a href="https://youtu.be/vwjYDJC95lk?si=JfOSi2_6rwR_xCN0" target="_blank">
-  <img src="f .png" alt="Instagram" width="250">
-</a>
-  <p>Losty - 謊言+秘密=幸福</p>  
-
-<div>
-<a href="https://youtu.be/wmxCotXmn7M?si=ldRBLzFyy9Gw1GIi" target="_blank">
-  <img src="h.png" alt="Instagram" width="250">
-</a>
-  <p>someshiit 山姆 - 善良是 Kinds of Kindness (ft. CHS)</p>  
-
-<div>
-<a href="https://youtu.be/2rrrvNGEntY?si=xl6VXZU5H3vJ3rFy" target="_blank">
-  <img src="g.png" alt="Instagram" width="250">
-</a>
-  <p>Crispy脆樂團 [ 年少的我們永遠輕狂 Youth ]</p> 
-
-<div>
-<a href="https://youtu.be/nNAjOaFqH_s?si=gj3GsKIZwXolm_T7" target="_blank">
-  <img src="i.png" alt="Instagram" width="250">
-</a>
-  <p>Flesh Juicer 血肉果汁機 - 愛情99</p>  
-
-<div>
-<a href="https://youtu.be/tM1zfYHokzc?si=cUJGsAdl_mXM7XzP" target="_blank">
-  <img src="j.png" alt="Instagram" width="250">
-</a>
-  <p>莉莉周她說 Lily Chou-Chou Lied - 大預言家</p>  
-
-<div>
-<a href="https://youtu.be/s9XbEKJ5_hA?si=Jp8BS2J-zObnaCyt" target="_blank">
-  <img src="k.png" alt="Instagram" width="250">
-</a>
-  <p>我是機車少女-認識我</p> 
-
-<div>
-<a href="https://youtu.be/ACUwOqwvP2Q?si=Bx0oq3-bxsdDa1cj" target="_blank">
-  <img src="l.png" alt="Instagram" width="250">
-</a>
-  <p>deca joins | 我不用問</p>  
-
-<div>
-<a href="https://youtu.be/Z9IrTxDX458?si=j1zR1PjHFcbbm-So" target="_blank">
-  <img src="m.png" alt="Instagram" width="250">
-</a>
-  <p>上山 《 得到平靜 Inner Peace 》</p>  
-
-<div>
-<a href="https://youtu.be/jK8I8eusEhI?si=ySfp3DAShBK6NZW8" target="_blank">
-  <img src="n.png" alt="Instagram" width="250">
-</a>
-  <p>Norton Street 諾頓街 - Taipei Flight</p>  
-
-<div>
-<a href="https://youtu.be/mFAhj2aMLQs?si=onhMKZlqE4_Ox1Ma" target="_blank">
-  <img src="o.png" alt="Instagram" width="250">
-</a>
-  <p>VH (Vast & Hazy)【整理整頓清潔中 Apple】</p> 
-
-
-<div>
-<a href="https://youtu.be/0KMqq10rTrM?si=6g0hBEp60NhUSp8L" target="_blank">
-  <img src="p.png" alt="Instagram" width="250">
-</a>
-  <p>小陸 - 寫完這首歌我就會放下你了</p>  
-
-<div>
-<a href="https://youtu.be/ciuxRdUTenU?si=c0Fp4IbE4uejjhEY" target="_blank">
-  <img src="q.png" alt="Instagram" width="250">
-</a>
-  <p>陳嫺靜 - 吸塵器 維他命</p>  
-
-<div>
-<a href="https://youtu.be/HHSguIIeNTM?si=--W663_VThILGbAS" target="_blank">
-  <img src="r.png" alt="Instagram" width="250">
-</a>
-  <p>【NEWSHIT】NO.2 政大黑音-最美好的時光</p>  
-  
-<div>
-<a href="https://youtu.be/ACyivCAsIGM?si=vDB5hxFMAmXi9CnS" target="_blank">
-  <img src="s.png" alt="Instagram" width="250">
-</a>
-  <p>林潔心 - 空白題 Test of my life</p>  
-
-<div>
-<a href="https://youtu.be/29sbWCkw2HA?si=j3SdTeGUcaAb0f27" target="_blank">
-  <img src="t.png" alt="Instagram" width="250">
-</a>
-  <p>渣泥ZANI 〈那個更衣間 / The Dressing Room</p>  
-<div>
- <a href="https://youtu.be/YRizyF42zUQ?si=_koeFMzOvD5nLt8O" target="_blank">
-  <img src="u.png" alt="Instagram" width="250">
-</a>
-  <p>Hello Nico - 荒蕪</p>  
-<div>
-<a href="https://youtu.be/1FyJY931Nqc?si=4dgPbRpLe87hEjej" target="_blank">
-  <img src="y.png" alt="Instagram" width="250">
-</a>
-  <p>163braces - 找 </p>  
-
-<div>
-<a href="https://youtu.be/av4QYOV0aYI?si=CY1i6d2egfdSoGdQ" target="_blank">
-  <img src="x.png" alt="Instagram" width="250">
-</a>
-  <p>胡恂舞 - 我無法再陪著你流浪</p>  
-
-<div>
-<a href="https://youtu.be/2fQ5es-qLaY?si=Uf0-tYdib9uo8VhC" target="_blank">
-  <img src="z.png" alt="Instagram" width="250">
-</a>
-  <p>草東沒有派對 - 爛泥</p>
-
-<div>
-<div style="width:100%; height:50px; background:#a3b9f5; display:flex; justify-content:center; align-items:center;"></div>
-</div>
-
+  <div style="width:100%; height:50px; background:#a3b9f5; margin-top:2rem;"></div>
 </section>
 
 <script>
-// 滾動顯示動畫
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
   sections.forEach(section => {
