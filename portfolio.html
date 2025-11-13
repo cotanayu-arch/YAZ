@@ -3,46 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>portfolio</title>
-<style>
-body{margin:0;font-family:'Helvetica',sans-serif;background:#f0f0f0;color:#333;scroll-behavior:smooth;}
-header{position:fixed;top:0;width:100%;background:rgba(240,240,240,0.95);display:flex;justify-content:flex-end;padding:1rem 2rem;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-header a{margin-left:2rem;text-decoration:none;color:#333;font-weight:bold;transition:color 0.3s;}
-
-section{min-height:100vh;padding:6rem 2rem 4rem 2rem;opacity:0;transform:translateY(40px);transition:all 1s ease;position:relative;margin-bottom:2rem;}
-section.visible{opacity:1;transform:translateY(0);}
-
-
-
-h1,h2{margin:0 0 1rem 0;}
-p{line-height:1.6;}
-.image-placeholder{width:100%;max-width:500px;height:300px;background:#ddd;border:2px dashed #aaa;display:flex;justify-content:center;align-items:center;color:#666;margin:1rem 0;}
-</style>
-</head>
-<body>
-
-<header>
-  <a href="index.html">YAKAAX</a>
-  <a href="about.html">關於我</a>
-  <a href="portfolio.html">作品集</a>
-  <a href="music.html">推薦音樂</a>
-  <a href="contact.html">聯絡資訊</a>
-</header>
-
-
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>作品集 - YAKAAX</title>
 <style>
-body{margin:0;font-family:'Helvetica',sans-serif;background:#f0f0f0;color:#333;scroll-behavior:smooth;}
-header{position:fixed;top:0;width:100%;background:rgba(240,240,240,0.95);display:flex;justify-content:flex-end;padding:1rem 2rem;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-header a{margin-left:2rem;text-decoration:none;color:#333;font-weight:bold;transition:color 0.3s;}
+body{
+  margin:0;
+  font-family:'Helvetica',sans-serif;
+  background:#f0f0f0;
+  color:#333;
+  scroll-behavior:smooth;
+}
+
+/* 導覽列 */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(240,240,240,0.95);
+  display:flex;
+  justify-content:flex-end;
+  padding:1rem 2rem;
+  z-index:1000;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+header a{
+  margin-left:2rem;
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+  transition:color 0.3s;
+}
 header a:hover{color:#6677aa;}
-h1,h2{margin:0 0 1rem 0;}
-p{line-height:1.6;}
 
 /* 作品集排版 */
 .gallery {
@@ -70,6 +61,7 @@ p{line-height:1.6;}
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  cursor: pointer;         /* 滑鼠變成手型 */
 }
 
 .photo img:hover {
@@ -77,10 +69,34 @@ p{line-height:1.6;}
 }
 
 /* 背景塊 */
-.bg-block{position:absolute;border-radius:15px;opacity:0.15;z-index:0;}
+.bg-block{
+  position:absolute;
+  border-radius:15px;
+  opacity:0.15;
+  z-index:0;
+}
 
+/* 圖片全螢幕 Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
 </style>
+<link rel="icon" href="zz.png" type="image/png">
 </head>
 <body>
 
@@ -92,89 +108,89 @@ p{line-height:1.6;}
   <a href="contact.html">聯絡資訊</a>
 </header>
 
+<!-- Lightbox -->
+<div id="lightbox">
+  <img id="lightbox-img" src="">
+</div>
+
 <!-- 作品集區塊 -->
 <div class="gallery">
   <div class="photo">
     <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
-  
-    <img src="19.PNG" alt="作品1">
+    <img class="gallery-img" src="19.PNG" alt="作品1">
   </div>
   <div class="photo">
     <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
-    
-    <img src="7.JPG" alt="作品2">
+    <img class="gallery-img" src="7.JPG" alt="作品2">
   </div>
   <div class="photo">
     <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
-  
-    <img src="8.JPG" alt="作品3">
+    <img class="gallery-img" src="8.JPG" alt="作品3">
   </div>
 </div>
 
 <div class="gallery">
   <div class="photo">
     <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
-  
-    <img src="9.JPG" alt="作品1">
+    <img class="gallery-img" src="9.JPG" alt="作品4">
   </div>
   <div class="photo">
     <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
-   
-    <img src="12.JPG" alt="作品2">
+    <img class="gallery-img" src="12.JPG" alt="作品5">
   </div>
   <div class="photo">
     <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
-    
-    <img src="13.JPG" alt="作品3">
-  </div>
-</div>
-<div class="gallery">
-  <div class="photo">
-    <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
-  
-    <img src="20.JPG" alt="作品1">
-  </div>
-  <div class="photo">
-    <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
-   
-    <img src="21.JPG" alt="作品2">
-  </div>
-  <div class="photo">
-    <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
-    
-    <img src="16.JPG" alt="作品3">
-  </div>
-
-  
-<div class="gallery">
-  <div class="photo">
-    <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
-  
-    <img src="10.JPG" alt="作品1">
-  </div>
-  <div class="photo">
-    <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
-   
-    <img src="14.JPG" alt="作品2">
-  </div>
-  <div class="photo">
-    <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
-    
-    <img src="18.JPG" alt="作品3">
+    <img class="gallery-img" src="13.JPG" alt="作品6">
   </div>
 </div>
 
-</body>
-</body>
+<div class="gallery">
+  <div class="photo">
+    <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
+    <img class="gallery-img" src="20.JPG" alt="作品7">
+  </div>
+  <div class="photo">
+    <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
+    <img class="gallery-img" src="21.JPG" alt="作品8">
+  </div>
+  <div class="photo">
+    <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
+    <img class="gallery-img" src="16.JPG" alt="作品9">
+  </div>
+</div>
+
+<div class="gallery">
+  <div class="photo">
+    <div class="bg-block bg-blue" style="top:20%; left:10%; width:200px; height:150px;"></div>
+    <img class="gallery-img" src="10.JPG" alt="作品10">
+  </div>
+  <div class="photo">
+    <div class="bg-block bg-orange" style="top:30%; left:60%; width:250px; height:180px;"></div>
+    <img class="gallery-img" src="14.JPG" alt="作品11">
+  </div>
+  <div class="photo">
+    <div class="bg-block bg-blue" style="top:40%; left:20%; width:200px; height:150px;"></div>
+    <img class="gallery-img" src="18.JPG" alt="作品12">
+  </div>
+</div>
 
 <script>
-const sections=document.querySelectorAll('section');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('visible');}
+// Lightbox 功能
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImgs = document.querySelectorAll('.gallery-img');
+
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
   });
-},{threshold:0.1});
-sections.forEach(section=>observer.observe(section));
+});
+
+// 點擊背景關閉
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
 </script>
 
 </body>
